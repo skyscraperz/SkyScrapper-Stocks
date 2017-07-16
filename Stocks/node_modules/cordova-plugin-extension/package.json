@@ -1,0 +1,38 @@
+{
+  "name": "cordova-plugin-extension",
+  "version": "1.5.1",
+  "description": "Cordova Plugin common extension with adapter interface",
+  "cordova": {
+    "id": "cordova-plugin-extension",
+    "platforms": [
+      "android",
+      "ios",
+      "amazon-fireos"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "extension",
+    "rjfun"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floatinghotpot/cordova-extension.git"
+  },
+  "author": {
+    "name": "Liming Xie",
+    "email": "rjfun.mobile@gmail.com"
+  },
+  "license": "MIT",
+  "readme": "\n# Cordova Plugin Common Extension #\n\nExtend the Cordova plugin base class with adapter interface.\n\nPlugin written based on this interface, may also be reused for Unity, Cocos2d-X, and other frameworks.\n\n# Purpose #\n\nMake Cordova Plugins reusable.\n\nTo use mobile device native functionalities and integrate 3rd-party SDKs, mobile developers are writting hundreds plugins for Cordova, Unity, Cocos2d-X, and other frameworks. \n\nCan they be reused? Yes, it's possible. \n\nCordova plugin manager is bridging function call between javascript and native languages, actually, it can be ported to bridge with C, C++, C#, then it can be reused for Unity, Cocos2d-X and other frameworks.\n\nSee:\n* Adapter for Cordova, (implemented as default, [Android](https://github.com/floatinghotpot/cordova-extension/blob/master/src/android/CordovaPluginExt.java) / [iOS](https://github.com/floatinghotpot/cordova-extension/blob/master/src/ios/CDVPluginExt.m) )\n* [Adapter for Unity](https://github.com/floatinghotpot/cordova-extension/tree/master/unity)\n* [Adapter for Cocos2d-X](https://github.com/floatinghotpot/cordova-extension/tree/master/cocos2dx)\n\n# How it works ? #\n\nAndroid implementation:\n\n```java\npublic interface PluginAdapterDelegate {\n\t// context\n\tpublic Activity getActivity();\n\tpublic View getView();\n\t// send message from plugin to container on events\n\tpublic void fireEvent(String obj, String eventName, String jsonData);\n\t// send call result\n\tpublic void sendPluginResult(PluginResult result, CallbackContext context);\n}\n\npublic class CordovaPluginExt extends CordovaPlugin implements PluginAdapterDelegate {\n\tprotected PluginAdapterDelegate adapter = null;\n}\n\n\n```\n\niOS implementation:\n\n```objective-c\n@protocol PluginAdapterDelegate <NSObject>\n\t// context\n- (UIView*) getView;\n- (UIViewController*) getViewController;\n\t// send message from plugin to container on events\n- (void) fireEvent:(NSString*)obj event:(NSString*)eventName withData:(NSString*)jsonStr;\n\t// send call result\n- (void) sendPluginResult:(CDVPluginResult*)result to:(NSString*)callbackId;\n@end\n\n@interface CDVPluginExt : CDVPlugin <PluginAdapterDelegate>\n@property(nonatomic, retain) id<PluginAdapterDelegate> adapter;\n@end\n\n\n```\n\nOther platform:\n\nNot implemented yet.\n\n# How to Use? #\n\nThis plugin is used as dependency of other plugins, for plugin developers only.\n\nIn your plugin.xml, add it as dependency:\n\n```xml\n<dependency id=\"cordova-plugin-extension\"/>\n```\n\nInherit Cordova Plugin Ext:\n\nPlugin for Android:\n\n```java\nimport com.rjfun.cordova.ext.*;\n\n// your plugin class\npublic class YourPluginClass extends CordovaPluginExt {\n\t// implement the method, call the API defined in PluginAdapterDelegate\n\tpublic boolean execute(String action, JSONArray inputs, CallbackContext callbackContext) throws JSONException;\n}\n```\n\nPlugin for iOS:\n```objective-c\n#import \"CDVCordovaExt.h\"\n\n// your plugin class\n@interface YourPluginClass : CDVPluginExt\n\t// implement the method, call the API defined in PluginAdapterDelegate\n- (void) your_method:(CDVInvokedUrlCommand *)command;\n@end\n```\n\n# Related Projects #\n\nTo use the plugin in other frameworks, following plugin managers are required.\n\n* [Cordova Plugin Manager for Unity](https://github.com/floatinghotpot/cordova-for-unity)\n* [Cordova Plugin Manager for Cocos2d-X](https://github.com/floatinghotpot/cordova-for-cocos2dx)\n\n# Credit #\n\nThis project is created by Raymond Xie.\n\nIf you are interested in this project, welcome to join and contribute.\n\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/cordova-extension/issues"
+  },
+  "homepage": "https://github.com/floatinghotpot/cordova-extension",
+  "_id": "cordova-plugin-extension@1.5.1",
+  "_shasum": "c67b08595e1b99c1b1253605b5556c201a5cfd44",
+  "_from": "cordova-plugin-extension@*",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-extension/-/cordova-plugin-extension-1.5.1.tgz"
+}

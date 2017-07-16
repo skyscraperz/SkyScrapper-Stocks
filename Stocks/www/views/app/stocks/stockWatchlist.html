@@ -1,0 +1,72 @@
+﻿<ion-view title="Watchlist" id="my-stocks" class="bookmarks-view" ng-controller="stockWatchlistCtrl">
+    <ion-header-bar class="bar-positive">
+        <h1 class="title"></h1>
+      </ion-header-bar>
+      <ion-header-bar class="bar-subheader">
+         <div class="search-component">
+     <!--<angucomplete-alt id="txtAutocomplete"
+                                  placeholder="Add Symbol"
+                                  pause="10"
+                                  selected-object="addSymbol"
+                                  local-data="Symbols"
+                                  local-search="filterFunction"
+                                  search-fields="Symbol,Name"
+                                  title-field="Symbol"
+                                  description-field="Name"
+                                  minlength="1"
+                                  text-searching="Searching..."
+                                  template-url="/my-custom-template.html"
+                                  enable-clear-search-btn="true"
+                                  match-class="highlight"
+                                  text-no-results="No Result Found">
+                </angucomplete-alt>-->
+                <div angucomplete-alt
+                     id="txtAutocomplete"
+                     placeholder="Add Symbol"
+                     pause="0"
+                     selected-object="addSymbol"
+                     remote-api-handler="symbollookup"
+                     remote-url-data-field="ResultSet.Result"
+                     title-field="symbol"
+                     search-fields="symbol,name"
+                     description-field="name"
+                     minlength="1"
+                     match-class="highlight"
+                     text-no-results="No Result Found">
+                </div>
+      </div>
+      </ion-header-bar>
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()"
+                       pulling-text="Pull to refresh..."
+                       refreshing-text="Refreshing!"
+                       refreshing-icon="ion-loading-c">
+        </ion-refresher>
+        
+      <div class="col col-center" ng-if="items.length==0">
+        <div class="empty-results">
+          <i class="icon ion-ios-pulse-strong"></i>
+          <h3 class="no-bookmarks">There's nothing here yet. Start exploring!</h3>
+        </div>
+      </div>
+        <ion-list>
+            <ion-item ng-repeat="item in items" ng-click="selected(item)">
+                <div class="row row-center">
+                    <div class="col stock-ticker-name">
+                        <h3>{{ item.symbol }}</h3>
+                        <h6 ng-bind="item.symbol"></h6>
+                    </div>
+                    <div class="col col-25 stock-price-time">
+                        <h3>{{ item.lastPrice }}</h3>
+                        <!--<h6>{{ item.utctime | date:'h:mm a' }}</h6>-->
+                    </div>
+                    <div class="col col-33 stock-change" ng-class="item.percentChange >= 0 ? 'background-green' : 'background-red' ">
+                        <h3><span ng-if="item.change >= 0">+</span>{{ item.percentChange | number: 3 }}%</h3>
+                        <h6><span ng-if="item.change >= 0">+</span>{{ item.netChange}}</h6>
+                    </div>
+                </div>
+                <ion-option-button class="button-assertive icon ion-trash-a" ng-click="onItemDelete(item)"></ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

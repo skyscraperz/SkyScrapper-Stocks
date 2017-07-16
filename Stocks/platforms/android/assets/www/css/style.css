@@ -1,0 +1,554 @@
+/* Empty. Add your own CSS if you like */
+
+/* My Stocks */
+
+#my-stocks .item-content {
+    padding: 5px 0 5px 5px;
+}
+
+#my-stocks h3 {
+    font-size: 4.75vmin;
+}
+
+#my-stocks h6 {
+    font-size: 3vmin;
+    font-weight: 300;
+}
+
+#my-stocks .stock-price-time {
+    padding-right: 10px;
+    text-align: right;
+}
+
+    #my-stocks .stock-price-time h3 {
+        font-weight: normal;
+    }
+
+#my-stocks .stock-change {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin-right: 0px;
+}
+
+    #my-stocks .stock-change h3,
+    #my-stocks .stock-change h6 {
+        color: white;
+    }
+
+#my-stocks .inset-shadow {
+    -webkit-box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Search */
+
+#search {
+    background-color: rgba(20, 20, 20, 0.975);
+}
+
+    #search .search-input {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    #search input {
+        color: white;
+    }
+
+
+/* News card */
+
+#stock-news .icon {
+    color: #ccc;
+    font-size: 11pt;
+    right: 0;
+}
+
+#stock-news h2 {
+    font-weight: 400;
+    white-space: normal;
+}
+
+#stock-news p {
+    color: #222;
+    font-size: 9pt;
+    margin: 10px auto 0;
+    white-space: normal;
+}
+
+#stock-news .item-icon-right {
+    padding-right: 30px;
+}
+
+
+/* Notes card */
+
+#stock-notes .add-stock-note {
+    border: 1px solid #ff9800;
+    border-radius: 3px;
+    color: #ff9800;
+    float: right;
+    font-size: 11pt;
+    font-weight: 300;
+    padding: 0 5px;
+}
+
+#stock-note-title {
+    border-bottom: 1px solid #eee;
+    padding: 0 5px;
+}
+
+#stock-note-body {
+    min-height: 100px;
+    padding: 10px 5px;
+}
+
+/* Market Data card */
+
+#market-data-card {
+    font-size: 3.25vmin;
+}
+
+    #market-data-card .col-20 {
+        font-weight: bolder;
+    }
+
+        #market-data-card .col-20:last-of-type {
+            text-align: right;
+        }
+
+    #market-data-card .last-trade {
+        font-size: 3vmin;
+        float: right;
+    }
+
+
+/* Stock navbar */
+
+#stock-navbar ion-header-bar {
+    border: none;
+}
+
+#stock-navbar .back-text {
+    font-size: 11pt;
+}
+
+
+/* Stock subheader bar */
+
+#stock-subheader-bar {
+    border-top: none;
+}
+
+#stock-name {
+    color: #333;
+    float: left;
+    font-size: 3.5vmin;
+    font-weight: normal;
+    margin: auto 0;
+    max-width: 33vw;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+
+#stock-price {
+    font-size: 7vmin;
+    line-height: 32pt;
+}
+
+#stock-change {
+    font-size: 4vmin;
+    font-weight: bolder;
+    float: right;
+    line-height: 12pt;
+    margin: auto 0;
+}
+
+
+/* Short button bar */
+
+#short-button-bar .button {
+    line-height: normal;
+    min-height: 10px;
+    border: none;
+    border-radius: 0;
+    font-size: 9pt;
+    background-color: white;
+}
+
+    #short-button-bar .button.active {
+        font-weight: bold;
+    }
+
+#short-button-bar {
+    -webkit-box-shadow: 0 0 0 1px #ddd;
+}
+
+
+
+
+/* Helper Styles */
+
+.display-flex {
+    display: flex !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.font-normal {
+    font-weight: normal !important;
+}
+
+.border-none {
+    border: none !important;
+}
+
+.margin-auto,
+.margin-auto svg {
+    margin: auto !important;
+}
+
+.text-align-center {
+    text-align: center !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.color-red {
+    color: #ef473a !important;
+}
+
+.background-red {
+    background-color: #ef473a !important;
+}
+
+.background-green {
+    background-color: #33cd5f !important;
+}
+
+
+/* Chart Styles */
+
+#interactiveChart {
+    height: 80vmin;
+}
+
+.nv-focus .nv-barsWrap,
+.nv-focus .nv-y1 .tick,
+.nv-focus .nv-y1 .nv-axisMaxMin,
+.nv-focus .nv-y1 .domain,
+.nv-context .nv-x .nv-axisMaxMin .nv-context .nv-y2 .domain,
+.nv-context .nv-y2 .nv-axisMaxMin,
+.nv-context .nv-y2 .tick {
+    display: none !important;
+}
+
+.nv-focus .nv-x .tick:first-of-type text,
+#interactiveChart text.nv-axislabel {
+    text-anchor: start !important;
+}
+
+.nv-focus .nv-y2 .tick text,
+.nv-focus .nv-y2 .nv-axisMaxMin text,
+.nv-focus .nv-x .tick:last-of-type text,
+.nv-context .nv-y1 .tick text,
+.nv-context .nv-y1 .nv-axisMaxMin text {
+    text-anchro: end !important;
+}
+
+#interactiveChart svg text {
+    font-size: 3vmin !important;
+}
+
+#interactiveChart .nv-axis line {
+    stroke-dasharray: 3,3;
+    stroke: #ddd;
+}
+
+#interactiveChart .nv-axis path.domain {
+    stroke-dasharray: 4,4;
+    stroke-opacity: .5;
+    stroke-width: 1px;
+}
+
+#interactiveChart .nv-focus .domain {
+    stroke: #1e88e5;
+}
+
+#interactiveChart .nv-focus .nv-axislabel,
+#interactiveChart .nv-focus .nv-axisMaxMin text {
+    fill: #1e88e5;
+}
+
+#interactiveChart .nv-context .domain {
+    stroke: #ff9800;
+}
+
+#interactiveChart .nv-context .nv-axislabel,
+#interactiveChart .nv-context .nv-axismaxMin text {
+    fill: #ff9800;
+}
+
+#interactiveChart .nv-focus .nv-y2 .tick text,
+#interactiveChart .nv-context .nv-y1 .tick text {
+    fill: #ccc;
+}
+
+#interactiveChart .nv-focus .nv-line {
+    stroke: #2196f3;
+    stroke-width: 2px;
+}
+
+#interactiveChart .nv-context .nv-line {
+    stroke: #aaa;
+    stroke-opacity: 0.75;
+    stroke-width: 1px;
+}
+
+#interactiveChart .nv-line {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#interactiveChart .nv-barsWrap rect {
+    fill: #ff9800;
+    fill-opacity: 1;
+    shape-rendering: crispEdges;
+}
+
+#interactiveChart .nv-brushBackground rect {
+    shape-rendering: crispEdges;
+    stroke-width: 1;
+    stroke: #ccc;
+}
+
+/* Adjustment Styles */
+
+svg text {
+    font: 400 10pt "Helvetica Neue", sans-serif !important;
+}
+
+.bar-positive {
+  z-index: 2;
+}
+
+.bar-subheader {
+  z-index: 35 !important;
+  -webkit-transition: top 0.25s ease;
+  transition: top 0.25s ease;
+}
+
+.has-subheader {
+  top: 44px;
+}
+.has-subheader .scroll {
+  padding-top: 44px;
+}
+
+body.bar-subheader-slide-away .bar-subheader {
+  top: 0;
+}
+body.bar-subheader-slide-away .has-subheader {
+  top: 44px;
+}
+.search-component{
+  width : 100%;
+  margin-top: -6px;
+}
+
+#footer {
+  position : absolute;
+  bottom : 0;
+  height : 40px;
+  margin-top : 40px;
+}
+
+.item-complex.item-icon-left .item-content {
+    padding-left: 54px;
+    border-bottom: 1px solid white;
+}
+
+#login {
+  background: #1c2627 url("../img/login_bg.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#login .scroll-content {
+  display: table !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+#login .scroll-content form {
+  display: table-cell;
+  vertical-align: middle;
+}
+#login .scroll-content form .header {
+  padding-bottom: 20px;
+}
+#login .scroll-content form .header img {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+#login .scroll-content form .button.button-light.active, #login .scroll-content form .button.button-light.activated {
+  color: #fff;
+  opacity: inherit;
+}
+
+
+
+
+
+/* Empty. Add your own CSS if you like */
+.welcome-view .top-content {
+    height: 40%;
+}
+
+    .welcome-view .top-content .app-copy {
+        text-align: center;
+        padding-top: 10vh;
+    }
+
+    .welcome-view .top-content .app-logo {
+        font-size: 50px;
+        font-family: cursive;
+        font-weight: 600;
+        font-style: italic;
+        color: #FFF;
+    }
+
+    .welcome-view .top-content .app-logosmall {
+        font-size: 30px;
+        font-family: cursive;
+        font-weight: 600;
+        font-style: italic;
+        color: #FFF;
+    }
+
+.welcome-view .bottom-content {
+    height: 60%;
+}
+
+    .welcome-view .bottom-content .facebook-sign-in, .welcome-view .bottom-content .google-sign-in, .welcome-view .bottom-content .twitter-sign-in {
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+        .welcome-view .bottom-content .facebook-sign-in:before, .welcome-view .bottom-content .google-sign-in:before, .welcome-view .bottom-content .twitter-sign-in:before {
+            width: 30px;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .welcome-view .bottom-content .facebook-sign-in .btn-copy, .welcome-view .bottom-content .google-sign-in .btn-copy, .welcome-view .bottom-content .twitter-sign-in .btn-copy {
+            margin-left: -30px;
+        }
+
+    .welcome-view .bottom-content .google-sign-in {
+        background-color: #dd4c39;
+        border-color: rgba(220,68,48,.9);
+    }
+
+    .welcome-view .bottom-content .facebook-sign-in {
+        background-color: #294886;
+        border-color: rgba(39,68,126,.9);
+    }
+
+    .welcome-view .bottom-content .twitter-sign-in {
+        background-color: #00a3dc;
+        border-color: rgba(0,155,210,.9);
+    }
+
+    .welcome-view .bottom-content .split-actions {
+        padding: 0;
+    }
+
+        .welcome-view .bottom-content .split-actions .col {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+            .welcome-view .bottom-content .split-actions .col:first-child {
+                padding-left: 0;
+            }
+
+            .welcome-view .bottom-content .split-actions .col:last-child {
+                padding-right: 0;
+            }
+
+        .welcome-view .bottom-content .split-actions .button-outline {
+            color: #FFF;
+            border-color: #FFF;
+            font-weight: 500;
+        }
+
+    .welcome-view .bottom-content .other-options-outer .ng-cloak, .welcome-view .bottom-content .other-options-outer .x-ng-cloak, .welcome-view .bottom-content .other-options-outer [data-ng-cloak], .welcome-view .bottom-content .other-options-outer [ng-cloak], .welcome-view .bottom-content .other-options-outer [ng\:cloak], .welcome-view .bottom-content .other-options-outer [x-ng-cloak] {
+        display: none !important;
+    }
+
+    .welcome-view .bottom-content .other-options-outer .hidden-actions.ng-hide, .welcome-view .bottom-content .other-options-outer .other-options.ng-hide {
+        display: none !important;
+    }
+
+    .welcome-view .bottom-content .other-options-outer .hidden-actions.ng-hide-remove.ng-hide-remove-active, .welcome-view .bottom-content .other-options-outer .other-options.ng-hide-add.ng-hide-add-active, .welcome-view .bottom-content .other-options-outer .other-options.ng-hide-remove.ng-hide-remove-active .hidden-actions.ng-hide-add.ng-hide-add-active {
+        -webkit-transition: all 0s ease;
+        transition: all 0s ease;
+    }
+
+    .welcome-view .bottom-content .other-options-outer .other-options {
+        color: #FFF;
+    }
+
+    .welcome-view .bottom-content .legal-notice {
+        color: #FFF;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+        .welcome-view .bottom-content .legal-notice a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #FFF;
+        }
+
+.bg-image {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+    .bg-image .img {
+        position: absolute;
+        background-image: url("../img/backgrounds/1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: opacity 0.5s;
+        height: 100%;
+        width: 100%;
+    }
+
+.bg {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.scroll-content {
+    z-index: 2;
+}
+.fadeOut {
+    opacity: 0;
+}
